@@ -4,7 +4,14 @@
 </template>
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-</script>
-<style scoped>
+import { toggleDark, isDark } from '@/hooks/dark'
+import { onBeforeMount } from 'vue';
+onBeforeMount(() => {
+  if (!isDark) {
+    toggleDark()
+  }
+})
 
-</style>
+
+</script>
+<style scoped></style>

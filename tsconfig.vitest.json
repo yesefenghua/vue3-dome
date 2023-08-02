@@ -4,6 +4,7 @@
   "compilerOptions": {
     "composite": true,
     "lib": [],
-    "types": ["node", "jsdom"]
+    "types": ["node", "jsdom"],
+    "typeRoots": ["./node_modules/@types", "./types"]
   }
 }

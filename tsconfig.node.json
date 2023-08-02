@@ -7,10 +7,12 @@
     "nightwatch.conf.*",
     "playwright.config.*"
   ],
+   
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["node"]
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "./types"]
   }
 }
