@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import piniaPersistPlugin from 'pinia-plugin-persist'
 import App from './App.vue'
 import router from './router'
 
@@ -11,9 +10,9 @@ import { useStore } from "@/stores/index";
 
 router.beforeEach((to, from, next) => {
   const Store = useStore()
-  if (to.fullPath == '/'|| to.fullPath=='/login' &&  Store?.info?.name) {
+  if (to.fullPath == '/'|| to.fullPath=='/login' &&  Store.info.name) {
      next('/about')
-  } else if(to.fullPath !== '/' && to.fullPath!=='/login' &&  !Store?.info?.name) {
+  } else if(to.fullPath !== '/' && to.fullPath!=='/login' &&  !Store.info.name) {
     next('/')
   }else{
     next()
@@ -24,9 +23,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
-const pinia =createPinia()
-pinia.use(piniaPersistPlugin)
-app.use(router).use(pinia).mount('#app')
+
+app.use(router).use(createPinia()).mount('#app')
 console.log(import.meta.env.VITE_API_URL);
 
 

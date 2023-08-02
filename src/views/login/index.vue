@@ -11,6 +11,7 @@
         <el-form-item>
             <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
             <el-button @click="resetForm(ruleFormRef)">重置</el-button>
+            <el-button @click="getlogin">测试网络请求</el-button>
         </el-form-item>
     </el-form>
 </template>
@@ -20,6 +21,7 @@ import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useStore } from "@/stores/index";
 import router from "@/router";
+import { login } from "@/api/login/index";
 const Store = useStore()
 const ruleFormRef = ref<FormInstance>()
 
@@ -70,6 +72,15 @@ const submitForm = (formEl: FormInstance | undefined) => {
 const resetForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
     formEl.resetFields()
+}
+const getlogin = () => {
+    login({ aaaa: 'bbb' })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((err) => {
+            console.log('err', err);
+        })
 }
 </script>
   
