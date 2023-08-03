@@ -47,9 +47,22 @@ const router = createRouter({
       children: [
         {
         path: '/about',
-        name: '系统',
+        name: '首页',
         component: () => import('@/views/Home/index.vue'),
         meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      },
+      ],
+    },
+    {
+      path: '/ui',
+      name: 'ui',
+      component: layout,
+      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      children: [{
+        path: '/uiaad',
+        name: '表格',
+        component: () => import('@/views/Table/index.vue'),
+        meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
       },
       {
         path: '/personInfoCards',
@@ -69,19 +82,6 @@ const router = createRouter({
             meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
           }
         ]
-      },
-      ],
-    },
-    {
-      path: '/ui',
-      name: 'ui',
-      component: layout,
-      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
-      children: [{
-        path: '/uiaad',
-        name: '系统1',
-        component: () => import('@/views/AboutView.vue'),
-        meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
       },
       ],
     },

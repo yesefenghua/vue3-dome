@@ -8,7 +8,7 @@
         <el-aside style="width: 200px;">
           <!-- 左侧菜单 -->
           <el-menu :default-active="router.currentRoute.value.path" class="el-menu-vertical-demo" :router="true">
-            <index :menuList="router.options.routes"></index>
+            <Menu :menuList="router.options.routes" />
           </el-menu>
         </el-aside>
         <el-main>
@@ -20,9 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import index from "./menu/index.vue";
+import Menu from "./menu/index.vue";
 import router from "@/router";
 import MyHeader from "./header/index.vue"
+
 </script>
 
 <style>
