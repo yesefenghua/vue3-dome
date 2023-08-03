@@ -46,6 +46,7 @@ export default defineConfig({
   },
 
   server: {
+    hmr: true,
     host: '0.0.0.0', // 指定服务器主机名，默认为 localhost
     port: 3000, // 指定服务器端口号，默认为 3000
     open: false, // 是否自动打开浏览器，默认为 true

@@ -7,6 +7,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 // 路由拦截
 import { useStore } from "@/stores/index";
+import piniaPersistPersistedstate from 'pinia-plugin-persistedstate'
 
 router.beforeEach((to, from, next) => {
   const Store = useStore()
@@ -24,7 +25,11 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 
-app.use(router).use(createPinia()).mount('#app')
+// 创建Pinia实例
+const pinia =createPinia()
+pinia.use(piniaPersistPersistedstate)
+
+app.use(router).use(pinia).mount('#app')
 console.log(import.meta.env.VITE_API_URL);
 
 

@@ -1,5 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import layout from '../layout/index.vue'
+
+declare module 'vue-router' {
+  interface _RouteRecordBase {
+    hidden?: boolean | string | number
+    target?: string
+  }
+}
+
 const roles = [
   {
     value: 'A',
@@ -22,7 +30,7 @@ const router = createRouter({
         {
           path: '/login',
           name: 'login',
-          component: () => import('@/views/login/index.vue'),
+          component: () => import('@/views/Login/index.vue'),
         },
         // {
         //   path: '/register',
@@ -32,7 +40,7 @@ const router = createRouter({
       ],
     },
     {
-      path: '/about',
+      path: '/Home',
       name: '首页',
       component: layout,
       meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
@@ -40,7 +48,7 @@ const router = createRouter({
         {
         path: '/about',
         name: '系统',
-        component: () => import('@/views/AboutView.vue'),
+        component: () => import('@/views/Home/index.vue'),
         meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
       },
       {
@@ -79,7 +87,7 @@ const router = createRouter({
     },
     {
       path: '/:pathMatch(.*)',
-      component: () => import('@/views/error/index.vue'),
+      component: () => import('@/views/Error/index.vue'),
       hidden: true,
     },
   ]
