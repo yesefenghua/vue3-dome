@@ -28,7 +28,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 // 创建Pinia实例
 const pinia =createPinia()
 pinia.use(piniaPersistPersistedstate)
-
 app.use(router).use(pinia).mount('#app')
 console.log(import.meta.env.VITE_API_URL);
 

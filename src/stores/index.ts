@@ -1,4 +1,4 @@
-import { defineStore,createPinia } from 'pinia'
+import { defineStore } from 'pinia'
 
 
 // 使用持久化插件
