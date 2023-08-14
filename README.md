@@ -1,22 +1,26 @@
-## Project Setup
+## 安装项目
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+### 运行项目
+#### 运行项目开发环境
 ```sh
 npm run dev
 ```
+#### 运行项目生产环境
+```sh
+npm run prod
+```
 
-### Type-Check, Compile and Minify for Production
+### 打包项目
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Run Unit Tests with
 
 ```sh
 npm run test:unit
