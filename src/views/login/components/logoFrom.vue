@@ -1,22 +1,26 @@
 
 <template>
     登录
-    <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" label-width="120px" class="demo-ruleForm">
-        <el-form-item label="账号" prop="name">
-            <el-input v-model="ruleForm.name" />
+    <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" label-width="120px" class="demo-ruleForm"
+        label-position="top">
+        <el-form-item prop="name">
+            <el-input v-model="ruleForm.name" placeholder="账号" />
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
-            <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
+        <el-form-item prop="pass">
+            <el-input v-model="ruleForm.pass" type="password" placeholder="密码" autocomplete="off" />
         </el-form-item>
-        <div>
-            <a @click="isfelseFu" style="color: burlywood;">
+        <div style="display: flex;align-items: center;  justify-content: space-between;">
+            <a @click="isfelseFu('3')" style="color: burlywood;">
+                找回密码
+            </a>
+            <a @click="isfelseFu('2')" style="color: burlywood;">
                 注册
             </a>
         </div>
-        <el-form-item>
+        <div style="display: flex;align-items: center;      justify-content: center;">
             <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
             <el-button @click="resetForm(ruleFormRef)">重置</el-button>
-        </el-form-item>
+        </div>
     </el-form>
 </template>
   
@@ -91,8 +95,8 @@ const resetForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
     formEl.resetFields()
 }
-const isfelseFu = () => {
-    storeLogin.isfelseFu('2')
+const isfelseFu = (id: string) => {
+    storeLogin.isfelseFu(id)
 }
 
 </script>

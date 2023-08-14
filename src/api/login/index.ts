@@ -20,4 +20,12 @@ export function registration(params:any) {
           }
       )
   } 
-  
+  export function reset(params:any) {
+    return  ajax(
+          {
+              method: 'post',
+              url: '/adduser',
+              data: params
+          }
+      )
+  } 

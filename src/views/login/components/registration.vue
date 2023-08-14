@@ -3,18 +3,18 @@
     <div>
         注册
     </div>
-    <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" label-width="120px" class="demo-ruleForm">
-        <el-form-item label="账号" prop="name">
-            <el-input v-model="ruleForm.name" />
+    <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" label-width="120px" class="demo-ruleForm"
+        label-position="top">
+        <el-form-item prop="name">
+            <el-input v-model="ruleForm.name" placeholder="账号" />
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
-            <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
+        <el-form-item prop="pass">
+            <el-input v-model="ruleForm.pass" type="password" placeholder="密码" autocomplete="off" />
         </el-form-item>
-
-        <el-form-item>
+        <div style="display: flex;align-items: center;      justify-content: center;">
             <el-button type="primary" @click="submitForm(ruleFormRef)">注册</el-button>
             <el-button @click="resetForm">返回</el-button>
-        </el-form-item>
+        </div>
     </el-form>
 </template>
   
