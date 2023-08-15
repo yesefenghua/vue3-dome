@@ -26,7 +26,7 @@
   
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
+import { type FormInstance, type FormRules } from 'element-plus'
 import { useStore } from "@/stores/index";
 import router from "@/router";
 import { login } from "@/api/login/index";
@@ -85,8 +85,8 @@ const submitForm = (formEl: FormInstance | undefined) => {
                     })
                     console.log(err);
                 })
-            // Store.key({ pass: ruleForm.pass, name: ruleForm.pass })
-            // router.push('/about')
+            Store.key({ pass: ruleForm.pass, name: ruleForm.pass })
+            router.push('/about')
         }
     })
 }

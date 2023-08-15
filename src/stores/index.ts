@@ -5,10 +5,13 @@ import { defineStore } from 'pinia'
 export const useStore = defineStore({
   id: 'globalState',
   state: () => ({
+    // 登录密码等信息
     info: {
       name:null,
       pass:null,
     },
+    // 菜单权限
+    menus:false,
   }),
   getters: {
     
@@ -16,6 +19,9 @@ export const useStore = defineStore({
   actions: {
     key(data:any){
       this.info =data
+    },
+    getMenus(data: boolean){
+      this.menus =data
     }
   },
   persist: {

@@ -20,7 +20,7 @@
   
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
+import { type FormInstance, type FormRules } from 'element-plus'
 import { useStoreLogin } from "@/stores/components/login";
 import { registration } from "@/api/login/index";
 const storeLogin = useStoreLogin();

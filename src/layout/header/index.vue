@@ -1,12 +1,15 @@
 <template>
-    <div style="display: flex;
-    justify-content: space-between;
-    align-content: center; 
-       height: 60px;
-    align-items: center;">
+    <div class="header">
         <div>
-            logo
-            <!-- <el-image style="width: 200px; height: 50px" :src="logo" fit="cover" /> -->
+            <el-button link @click="menusFu">
+                <el-icon class="transition-box" size="20" v-if="!store.menus">
+                    <Fold />
+                </el-icon>
+                <el-icon class="transition-box" size="20" v-if="store.menus">
+                    <Expand />
+                </el-icon>
+            </el-button>
+
         </div>
         <div>
             <settings />
@@ -16,8 +19,21 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import logo from '@/assets/logo.svg';
 import settings from "./settings.vue";
+import { useStore } from "@/stores/index";
+const store = useStore()
+const menusFu = () => {
+    store.getMenus(!store.menus)
+}
+
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 60px;
+    align-items: center;
+}
+</style>

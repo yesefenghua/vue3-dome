@@ -12,7 +12,7 @@
             <el-input v-model="ruleForm.pass" type="password" placeholder="密码" autocomplete="off" />
         </el-form-item>
         <div style="display: flex;align-items: center;      justify-content: center;">
-            <el-button type="primary" @click="submitForm(ruleFormRef)">注册</el-button>
+            <el-button type="primary" @click="submitForm(ruleFormRef)">确定</el-button>
             <el-button @click="resetForm">返回</el-button>
         </div>
     </el-form>
@@ -20,7 +20,7 @@
   
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
+import { type FormInstance, type FormRules } from 'element-plus'
 import { useStoreLogin } from "@/stores/components/login";
 import { reset } from "@/api/login/index";
 const storeLogin = useStoreLogin();
