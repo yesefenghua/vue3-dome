@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container style="height: 100vh;">
-      <el-aside :width="store.menus ? '60px' : '190px'">
+      <el-aside :width="store.menus ? '65px' : '200px'" style="box-shadow: 2px 2px 3px #252525; margin-right: 2px;">
         <!-- 左侧菜单 -->
         <el-image style="width: 100%; height: 50px" src="logo" fit="cover" />
         <el-menu :collapse="store.menus" :default-active="router.currentRoute.value.path" class="el-menu-vertical-demo"
@@ -11,9 +11,13 @@
       </el-aside>
       <el-container>
         <el-header>
+          <!-- 头部区域 -->
           <MyHeader />
         </el-header>
-        <el-main> <router-view /></el-main>
+        <el-main>
+          <!-- 内容区域 -->
+          <router-view />
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -65,8 +69,11 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
+.el-menu-vertical-demo {
+  border-right: none;
+}
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  height: calc(100% - 55px);
 }
 </style>
