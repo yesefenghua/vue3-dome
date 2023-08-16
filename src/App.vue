@@ -11,7 +11,9 @@ import { onBeforeMount } from 'vue';
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'dayjs/locale/zh-cn'
 onBeforeMount(() => {
+  // 判断是否为暗色模式
   if (!isDark) {
+    // 打开暗色模式
     toggleDark()
   }
 })

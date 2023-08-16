@@ -26,22 +26,35 @@ export default defineConfig({
     }
   },
   build: {
+    // 模块编译目标
     target: "modules",
+    // 压缩模块
     minify: "terser",
+    // 编译输出目录
     outDir: "dist",
+    // 资源文件夹
     assetsDir: "assets",
+    // 资源内联限制
     assetsInlineLimit: 4096,
+    // CSS分割
     cssCodeSplit: true,
-    sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
+    // 是否生成sourcemap
+    sourcemap: process.env.NODE_ENV === 'production'? false : 'inline',
+    // rollup插件
     rollupOptions: {
       plugins: [],
     },
+    // terser插件
     terserOptions: {
+      // 压缩
       compress: {
+        // 是否输出调试信息
         drop_console: process.env.NODE_ENV === 'production',
+        // 是否输出调试信息
         drop_debugger: process.env.NODE_ENV === 'production',
       },
     },
+    // 内联大小警告限制
     chunkSizeWarningLimit: 500,
   },
 
