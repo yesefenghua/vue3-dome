@@ -5,14 +5,16 @@
   </el-config-provider>
 </template>
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { toggleDark, isDark } from '@/hooks/dark'
 import { onBeforeMount } from 'vue';
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'dayjs/locale/zh-cn'
 onBeforeMount(() => {
   // 判断是否为暗色模式
-  if (!isDark) {
+  console.log(isDark.value);
+
+  if (!isDark.value) {
     // 打开暗色模式
     toggleDark()
   }
@@ -20,4 +22,4 @@ onBeforeMount(() => {
 
 
 </script>
-<style scoped></style>
+<style scoped lang="scss"></style>

@@ -3,14 +3,14 @@
     <el-container style="height: 100vh;">
       <el-aside :width="store.menus ? '65px' : '200px'" style="box-shadow: 2px 2px 3px #252525; margin-right: 2px;">
         <!-- 左侧菜单 -->
-        <el-image style="width: 100%; height: 50px" src="logo" fit="cover" />
+        <el-image style="width: 100%; height: 60px" src="logo" fit="cover" />
         <el-menu :collapse="store.menus" :default-active="router.currentRoute.value.path" class="el-menu-vertical-demo"
           :router="true">
           <Menu :menuList="router.options.routes" />
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header>
+        <el-header style="box-shadow: 2px 2px 3px #252525;">
           <!-- 头部区域 -->
           <MyHeader />
         </el-header>
@@ -32,31 +32,19 @@ import logo from '@/assets/logo.svg';
 import { useStore } from "@/stores/index";
 const store = useStore()
 
-// 获取屏幕宽度
-const screenWidth = ref(window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);
-
-// 获取设备类型
 
 // 监听屏幕宽度变化
 const handleResize = () => {
-  screenWidth.value = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  setDeviceType();
-
-};
-
-// 设置设备类型
-const setDeviceType = () => {
-  if (screenWidth.value <= 767) {
-    // deviceType.value = '手机端';
-  } else if (screenWidth.value >= 768 && screenWidth.value <= 1024) {
+  const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  // 设置设备类型
+  if (screenWidth <= 767) { // 手机端
+    store.getMenus(true)
+  } else if (screenWidth >= 768 && screenWidth <= 1024) {
     store.getMenus(true)
   } else {
     store.getMenus(false)
   }
-
-
 };
-
 // 在组件挂载时添加事件监听器
 onMounted(() => {
   window.addEventListener('resize', handleResize);

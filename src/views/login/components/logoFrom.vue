@@ -9,18 +9,15 @@
         <el-form-item prop="pass">
             <el-input v-model="ruleForm.pass" type="password" placeholder="密码" autocomplete="off" />
         </el-form-item>
-        <div style="display: flex;align-items: center;  justify-content: space-between;">
-            <a @click="isfelseFu('3')" style="color: burlywood;">
+        <div style="display: flex;align-items: center;  justify-content: space-between;margin-bottom: 10px;">
+            <a @click="isfelseFu('3')">
                 找回密码
             </a>
-            <a @click="isfelseFu('2')" style="color: burlywood;">
+            <a @click="isfelseFu('2')">
                 注册
             </a>
         </div>
-        <div style="display: flex;align-items: center;      justify-content: center;">
-            <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
-            <el-button @click="resetForm(ruleFormRef)">重置</el-button>
-        </div>
+        <el-button type="primary" style="width: 100%;" @click="submitForm(ruleFormRef)">登录</el-button>
     </el-form>
 </template>
   
@@ -91,10 +88,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
     })
 }
 
-const resetForm = (formEl: FormInstance | undefined) => {
-    if (!formEl) return
-    formEl.resetFields()
-}
+
 const isfelseFu = (id: string) => {
     storeLogin.isfelseFu(id)
 }

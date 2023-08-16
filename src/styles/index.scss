@@ -1,0 +1,37 @@
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+  /* 设置滚动条整体样式 */
+  ::-webkit-scrollbar {
+    width: 4px; /* 滚动条宽度 */
+  }
+  /* 设置滚动条轨道样式 */
+  ::-webkit-scrollbar-track ,
+  /* 设置滚动条滑块样式 */
+  ::-webkit-scrollbar-thumb ,
+  /* 设置滚动条滑块悬停样式 */
+  ::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background-color: #79797916; /* 滚动条滑块悬停时的背景颜色 */
+  }
+
+  .el-pager li:focus,
+  .el-dropdown:focus,
+  .el-dropdown:focus-visible {
+    border: none;
+  }
+  .el-dropdown,
+  .el-dropdown-link,
+  .el-dropdown span:focus-visible,
+  .svg-icon:focus,
+  .el-icon {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+  .el-dropdown {
+    cursor: pointer;
+  }

@@ -11,7 +11,7 @@
         <el-form-item prop="pass">
             <el-input v-model="ruleForm.pass" type="password" placeholder="密码" autocomplete="off" />
         </el-form-item>
-        <div style="display: flex;align-items: center;      justify-content: center;">
+        <div style="display: flex;align-items: center; justify-content: center;">
             <el-button type="primary" @click="submitForm(ruleFormRef)">确定</el-button>
             <el-button @click="resetForm">返回</el-button>
         </div>

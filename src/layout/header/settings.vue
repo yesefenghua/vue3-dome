@@ -1,34 +1,26 @@
 <template>
     <el-space :size="18">
-        <div>
-            <el-dropdown>
-                <span class="el-dropdown-link">
-                    {{ Store.info.name }}
-                </span>
-                <template #dropdown>
-                    <div style="margin: 10px; min-width: 100px;">
-                        <div @click="getlogin">
-                            退出登录
-                        </div>
+        <el-dropdown>
+            {{ Store.info.name }}
+            <template #dropdown>
+                <div style="margin: 10px; min-width: 100px;">
+                    <div @click="getlogin">
+                        退出登录
                     </div>
-                </template>
-            </el-dropdown>
-        </div>
-        <div>
-            <!-- 设置深色模式 -->
-            <el-dropdown>
-                <span class="el-dropdown-link">
-                    <el-icon :size="20">
-                        <Setting />
-                    </el-icon>
-                </span>
-                <template #dropdown>
-                    <div style="margin: 10px; min-width: 100px;">
-                        <el-switch v-model="valueDark" @change="getToggleDark" size="small" inactive-text="深色模式" />
-                    </div>
-                </template>
-            </el-dropdown>
-        </div>
+                </div>
+            </template>
+        </el-dropdown>
+        <!-- 设置深色模式 -->
+        <el-dropdown>
+            <el-icon :size="20">
+                <Setting />
+            </el-icon>
+            <template #dropdown>
+                <div style="margin: 10px; min-width: 100px;">
+                    <el-switch v-model="valueDark" @change="getToggleDark" size="small" inactive-text="深色模式" />
+                </div>
+            </template>
+        </el-dropdown>
     </el-space>
 </template>
 

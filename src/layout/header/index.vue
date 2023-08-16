@@ -1,15 +1,12 @@
 <template>
     <div class="header">
-        <div>
-            <el-button link @click="menusFu">
-                <el-icon class="transition-box" size="20" v-if="!store.menus">
-                    <Fold />
-                </el-icon>
-                <el-icon class="transition-box" size="20" v-if="store.menus">
-                    <Expand />
-                </el-icon>
-            </el-button>
-
+        <div @click="menusFu">
+            <el-icon class="transition-box" size="20" v-if="!store.menus">
+                <Fold />
+            </el-icon>
+            <el-icon class="transition-box" size="20" v-if="store.menus">
+                <Expand />
+            </el-icon>
         </div>
         <div>
             <settings />

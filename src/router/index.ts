@@ -32,11 +32,6 @@ const router = createRouter({
           name: 'login',
           component: () => import('@/views/Login/index.vue'),
         },
-        // {
-        //   path: '/register',
-        //   name: 'register',
-        //   component: () => import('@/views/login/components/registerCom.vue'),
-        // },
       ],
     },
     {
@@ -55,7 +50,7 @@ const router = createRouter({
     },
     {
       path: '/ui',
-      name: 'ui',
+      name: '表格',
       component: layout,
       meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
       children: [{
@@ -70,15 +65,9 @@ const router = createRouter({
         meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
         children: [
           {
-            path: '/about11',
-            name: 'about11',
-            component: () => import('@/views/AboutView.vue'),
-            meta: { title: 'person', icon: 'ChatLineRound',roles: roles },
-          },
-          {
             path: '/personInfoCards',
             name: 'personInfoCards',
-            component: () => import('@/views/index.vue'),
+            component: () => import('@/views/Dome/index.vue'),
             meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
           }
         ]
