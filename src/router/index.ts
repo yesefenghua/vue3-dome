@@ -49,7 +49,7 @@ const router = createRouter({
       ],
     },
     {
-      path: '/ui',
+      path: '/table',
       name: '表格',
       component: layout,
       meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
@@ -71,6 +71,19 @@ const router = createRouter({
             meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
           }
         ]
+      },
+      ],
+    },
+    {
+      path: '/Form',
+      name: '表单',
+      component: layout,
+      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      children: [{
+        path: '/form',
+        name: '表单',
+        component: () => import('@/views/Form/index.vue'),
+        meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
       },
       ],
     },
