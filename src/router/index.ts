@@ -85,6 +85,12 @@ const router = createRouter({
         component: () => import('@/views/Form/index.vue'),
         meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
       },
+      {
+        path: '/formtable',
+        name: '计算器',
+        component: () => import('@/views/Form/formtable/index.vue'),
+        meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
+      },
       ],
     },
     {
