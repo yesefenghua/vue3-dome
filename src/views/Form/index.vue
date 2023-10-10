@@ -33,6 +33,7 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules, UploadInstance, } from 'element-plus'
 import { check } from "@/api/dome/index";
+
 const ruleFormRef = ref<FormInstance>()
 const name = (rule: any, value: any, callback: any) => {
     if (value === '') {

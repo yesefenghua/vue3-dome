@@ -38,21 +38,21 @@ const router = createRouter({
       path: '/Home',
       name: '首页',
       component: layout,
-      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
       children: [
         {
-        path: '/about',
-        name: '首页',
-        component: () => import('@/views/Home/index.vue'),
-        meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
-      },
+          path: '/about',
+          name: '首页',
+          component: () => import('@/views/Home/index.vue'),
+          meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
+        },
       ],
     },
     {
       path: '/table',
       name: '表格',
       component: layout,
-      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
       children: [{
         path: '/uiaad',
         name: '表格',
@@ -62,13 +62,13 @@ const router = createRouter({
       {
         path: '/personInfoCards',
         name: 'personInfoCards',
-        meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+        meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
         children: [
           {
             path: '/personInfoCards',
             name: 'personInfoCards',
             component: () => import('@/views/Dome/index.vue'),
-            meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+            meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
           }
         ]
       },
@@ -78,7 +78,7 @@ const router = createRouter({
       path: '/Form',
       name: '表单',
       component: layout,
-      meta: { title: 'person', icon: 'ChatLineRound',  roles: roles },
+      meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
       children: [{
         path: '/form',
         name: '表单',
@@ -89,6 +89,19 @@ const router = createRouter({
         path: '/formtable',
         name: '计算器',
         component: () => import('@/views/Form/formtable/index.vue'),
+        meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
+      },
+      ],
+    },
+    {
+      path: '/WangEditor',
+      name: '富文本',
+      component: layout,
+      meta: { title: 'person', icon: 'ChatLineRound', roles: roles },
+      children: [{
+        path: '/WangEditor',
+        name: '富文本',
+        component: () => import('@/views/WangEditor/index.vue'),
         meta: { title: 'person', icon: 'ChatLineRound', affix: true, roles: roles },
       },
       ],

@@ -28,6 +28,7 @@ import { ref, reactive, watch } from 'vue'
 import { useVueFuse } from 'vue-fuse'
 import { download } from "@/utils/excelDownload";
 import { data } from "./index";
+var lise = []
 const downloadExcel = () => {
     download(tableData.value, ["名称", "时间", "距离"],)
 }

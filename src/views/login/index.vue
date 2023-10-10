@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount } from "vue";
 import logoFrom from "./components/logoFrom.vue";
 import registration from "./components/registration.vue";
 import reset from "./components/reset.vue";

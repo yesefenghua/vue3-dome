@@ -24,14 +24,19 @@
                     <el-input v-model="row.unitPrice" />
                 </template>
             </el-table-column>
-            <el-table-column label=" ">
+            <el-table-column label="价格">
                 <template #default="{ row }">
-                    <el-input v-model="row.price" />
+                    {{ row.quantity * row.unitPrice }}(元)
                 </template>
             </el-table-column>
             <el-table-column label="备注">
                 <template #default="{ row }">
                     <el-input v-model="row.remark" />
+                </template>
+            </el-table-column>
+            <el-table-column label="操作">
+                <template #default="{ row }">
+                    <el-button>删除</el-button>
                 </template>
             </el-table-column>
             <template #append>
@@ -45,13 +50,13 @@
   
 <script lang="ts" setup>
 import { ref } from 'vue'
-const tableData = ref([[{
-    date: '2016-05-03',
-    name: 'beijing',
-    address: 189,
-},]])
-
 class Project {
+    project: null;
+    quantity: null;
+    unit: null;
+    unitPrice: null;
+    price: null;
+    remark: null;
     constructor() {
         this.project = null;
         this.quantity = null;
@@ -61,17 +66,20 @@ class Project {
         this.remark = null;
     }
 }
+const tableData = ref([[
+    new Project()
+]])
 
 //添加类别
 const add = () => {
     tableData.value.push([new Project()])
 }
-const address = (length) => {
+const address = (length: number) => {
     tableData.value[length].push(new Project())
 }
-const del = (data) => {
-    tableData.value.splice(data, 1)
-}
+// const del = (data) => {
+//     tableData.value.splice(data, 1)
+// }
 const addse = () => {
     console.log(tableData.value)
 }
